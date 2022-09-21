@@ -16,6 +16,12 @@ public class Main {
         System.out.println(name);
         System.out.println(number);
 
+        int number2 = 16;
+        String name2 = "Leonie-Sopie";
+
+        System.out.println(name2);
+        System.out.println(number2);
+
 
 
 
