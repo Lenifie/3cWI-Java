@@ -47,6 +47,13 @@ public class Main {
                 System.out.println("is 8");
                 break;
         }
+
+        int number1 = 1;
+        int summe = 0;
+        for (int i = 0; i < 100; i++){
+            summe = summe + number1;
+        }
+        System.out.println(summe);
     }
 
     //strg blank
