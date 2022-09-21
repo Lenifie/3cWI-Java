@@ -36,7 +36,17 @@ public class Main {
             System.out.println("Large");
         }
 
-
+        switch (randomNumber){
+            case 10:
+                System.out.println("is 10");
+                break;
+            case 9:
+                System.out.println("is 9");
+                break;
+            case 8:
+                System.out.println("is 8");
+                break;
+        }
     }
 
     //strg blank
