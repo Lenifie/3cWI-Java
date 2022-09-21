@@ -53,8 +53,28 @@ public class Main {
         for (int i = 0; i < 100; i++){
             summe = summe + number1;
         }
-        System.out.println(summe);
+        System.out.println("Summe" + summe);
+
+        Random random1 = new Random();
+        int summe2 = 0;
+        boolean isFinished = true;
+
+        while (isFinished)
+        {
+            int randomNumber1 = random1.nextInt((30)); //generiert 0-30
+            if (randomNumber1 >10)
+            {
+                if ((randomNumber1 == 15) || (randomNumber1 == 25))
+                {
+                    break;
+                }
+                summe2 = summe2 + randomNumber1;
+                System.out.println("Summe2-"+ ""+summe2);
+            }
+        }
+        System.out.println("Die Summe lautet:"+summe2);
     }
+
 
     //strg blank
 }
