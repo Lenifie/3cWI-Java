@@ -16,22 +16,22 @@ public class Bankomat {
            System.out.println("4. Beenden (b)");
 
            Scanner inputFromScanner = new Scanner(System.in);
-
            char selectionOfUser = inputFromScanner.next().charAt(0);
-           System.out.println(selectionOfUser);
+
 
            switch (selectionOfUser)
            {
                case 'e':
                    System.out.println("Geldmenge: ");
-                   int value = inputFromScanner.nextInt();
-                   balance += value;
+                   int payIn = inputFromScanner.nextInt();
+                   balance += payIn;
+                   System.out.println("Der Betrag von "+ payIn + " wurde eingezahlt.");
                    break;
                case 'a':
                    System.out.println("Geldmenge: ");
-//                eingabe.nextInt(abheben);
-//                kontostand = kontostand - abheben;
-                   break;
+                    int drawOut = inputFromScanner.nextInt();
+                    balance -= drawOut;
+                   System.out.println("Der Betrag von "+ drawOut + " wurde abgehoben.");
                case 'k':
                    System.out.println("Der kontostand ist: ");
                    System.out.println(balance);
