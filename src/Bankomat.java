@@ -4,7 +4,7 @@ public class Bankomat {
     public static void main(String[] args) {
 
 
-        int balance = 0;
+        float balance = 0;
         boolean isProgrammRunning = true;
 
 
@@ -23,15 +23,16 @@ public class Bankomat {
            {
                case 'e':
                    System.out.println("Geldmenge: ");
-                   int payIn = inputFromScanner.nextInt();
+                   float payIn = inputFromScanner.nextFloat();
                    balance += payIn;
-                   System.out.println("Der Betrag von "+ payIn + " wurde eingezahlt.");
+                   System.out.println("Der Betrag von "+ payIn + " wurde eingezahlt."+ '\n');
                    break;
                case 'a':
                    System.out.println("Geldmenge: ");
-                    int drawOut = inputFromScanner.nextInt();
+                    float drawOut = inputFromScanner.nextFloat();
                     balance -= drawOut;
-                   System.out.println("Der Betrag von "+ drawOut + " wurde abgehoben.");
+                   System.out.println("Der Betrag von "+ drawOut + " wurde abgehoben."+ '\n');
+                   break;
                case 'k':
                    System.out.println("Der kontostand ist: ");
                    System.out.println(balance);
