@@ -49,20 +49,18 @@ public class Würfelspiel {
             case 'e':
                 if(cubeShotUser>cubeShotComputer){
                     System.out.println("Spieler hat gewonnen");
-                    int cubeShotUser = 0;
-                    int cubeShotComputer = 0;
+
                 }
                 else if(cubeShotComputer>cubeShotUser){
                     System.out.println("Computer hat gewonnens" );
-                    int cubeShotUser = 0;
-                    int cubeShotComputer = 0;
+
                 }
                 else {
                     System.out.println("Gleichstand");
-                    int cubeShotUser = 0;
-                    int cubeShotComputer = 0;
-                }
 
+                }
+                cubeShotUser = 0;
+                cubeShotComputer = 0;
 
                 break;
         }
