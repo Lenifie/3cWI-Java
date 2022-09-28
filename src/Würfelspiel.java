@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Würfelspiel {
     public static void main(String[] args) {
@@ -12,14 +13,50 @@ public class Würfelspiel {
         Random random = new Random();
         int randomNumber = random.nextInt(6)+1;
         int cubeShotUser = 0;
+        int cubeShotComputer = 0;
+        boolean isProgrammRunning = true;
 
-        for(int i = 1; i < 7; i++)
-        {
+    while (isProgrammRunning){
 
-            System.out.println(i +". Wurf: " + randomNumber);
-            cubeShotUser += randomNumber;
+        System.out.println("Welcher Spieler soll beginnen:");
+        System.out.println("Spieler (s)");
+        System.out.println("Computer (c)");
+        System.out.println("Ergebnis (e)");
+        Scanner inputFromScanner = new Scanner(System.in);
+        char selectionOfUser = inputFromScanner.next().charAt(0);
+
+        switch (selectionOfUser){
+            case 's':
+                for(int i = 1; i < 7; i++)
+                {
+
+                    System.out.println(i +". Wurf: " + randomNumber);
+                    cubeShotUser += randomNumber;
+                }
+                System.out.println("Spieler hat eine Augensumme von: " + cubeShotUser +'\n');
+                break;
+            case 'c':
+                for(int i = 1; i < 7; i++)
+                {
+
+                    System.out.println(i +". Wurf: " + randomNumber);
+                    cubeShotComputer += randomNumber;
+                }
+                System.out.println("Computer hat eine Augensumme von: " + cubeShotComputer +'\n');
+                break;
+            case 'e':
+                if(cubeShotUser>cubeShotComputer){
+                    System.out.println("Spieler hat gewonnen");
+                }
+                else {
+                    System.out.println("Computer hat gewonnens" );
+
+                }
+                break;
         }
-        System.out.println("Spieler hat eine Augensumme von: " + cubeShotUser +'\n');
+
+
+    }
 
 
     }
