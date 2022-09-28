@@ -11,12 +11,14 @@ public class Würfelspiel {
        ansonsten der Computer*/
 
         Random random = new Random();
-        int randomNumber = random.nextInt(6)+1;
         int cubeShotUser = 0;
         int cubeShotComputer = 0;
+
         boolean isProgrammRunning = true;
 
     while (isProgrammRunning){
+
+
 
         System.out.println("Welcher Spieler soll beginnen:");
         System.out.println("Spieler (s)");
@@ -29,7 +31,7 @@ public class Würfelspiel {
             case 's':
                 for(int i = 1; i < 7; i++)
                 {
-
+                    int randomNumber = random.nextInt(6)+1;
                     System.out.println(i +". Wurf: " + randomNumber);
                     cubeShotUser += randomNumber;
                 }
@@ -38,7 +40,7 @@ public class Würfelspiel {
             case 'c':
                 for(int i = 1; i < 7; i++)
                 {
-
+                    int randomNumber = random.nextInt(6)+1;
                     System.out.println(i +". Wurf: " + randomNumber);
                     cubeShotComputer += randomNumber;
                 }
@@ -47,11 +49,21 @@ public class Würfelspiel {
             case 'e':
                 if(cubeShotUser>cubeShotComputer){
                     System.out.println("Spieler hat gewonnen");
+                    int cubeShotUser = 0;
+                    int cubeShotComputer = 0;
+                }
+                else if(cubeShotComputer>cubeShotUser){
+                    System.out.println("Computer hat gewonnens" );
+                    int cubeShotUser = 0;
+                    int cubeShotComputer = 0;
                 }
                 else {
-                    System.out.println("Computer hat gewonnens" );
-
+                    System.out.println("Gleichstand");
+                    int cubeShotUser = 0;
+                    int cubeShotComputer = 0;
                 }
+
+
                 break;
         }
 
