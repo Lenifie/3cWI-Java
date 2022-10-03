@@ -27,6 +27,22 @@ public class CaesarVerschluesselung
             Scanner inputFromScanner = new Scanner(System.in);
             char selectionOfUser = inputFromScanner.next().charAt(0);
 
+
+
+            switch (selectionOfUser)
+            {
+                case 'e':
+                    System.out.println("Um wie viel soll es verschoben werden?");
+                    int moveLetter = inputFromScanner.nextInt();
+                    System.out.println(moveLetter);
+
+                    System.out.println("Eingabe des Textes");
+                    String sentence = inputFromScanner.toString();
+
+                    break;
+                case 'd':
+                    break;
+            }
         }
     }
 }
