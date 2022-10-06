@@ -38,6 +38,7 @@ public class Verschluesselung {
             {
                 isProgrammRunning = false;
             }
+            return Satz;
         }
     }
 
@@ -88,4 +89,6 @@ public class Verschluesselung {
 
         }
     }
+
+
 }
