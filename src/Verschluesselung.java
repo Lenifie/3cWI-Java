@@ -1,91 +1,90 @@
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.Scanner;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 
 public class Verschluesselung {
-    private static SecretKeySpec secretKey;
-    private static byte[] key;
-    private static final String ALGORITHM = "AES";
+    public String encrypt()
+    {
+        int Verschiebung = 0;
+        String Satz = "";
+        int Buchstabe = 0;
 
-    public void prepareSecreteKey(String myKey) {
-        MessageDigest sha = null;
-        try {
-            key = myKey.getBytes(StandardCharsets.UTF_8);
-            sha = MessageDigest.getInstance("SHA-1");
-            key = sha.digest(key);
-            key = Arrays.copyOf(key, 16);
-            secretKey = new SecretKeySpec(key, ALGORITHM);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        for(int i = 0; i < Satz.length(); i++)
+        {
+            Buchstabe = Satz[i];
+            Buchstabe += Verschiebung;
+            Satz[i] = Buchstabe;
         }
+        return Satz;
+    }
+    public String decrypt(String Satz)
+    {
+        int Buchstabe = Satz[i];
+        boolean isProgrammRunning = true;
+        do{
+            for(int i = 0; i<Satz.length(); i++)
+            {
+                Buchstabe = Satz[i];
+                Buchstabe -= 1;
+                Satz[i]= Buchstabe;
+            }
+            System.out.println("Der Text lautet: ");
+            System.out.println(Satz);
+            System.out.println("Wurde derText entschluesselt? Wenn ja (j)");
+            Scanner inputFromScanner = new Scanner(System.in);
+            char programmEnd = inputFromScanner.next().charAt();
+            if (programmEnd == 'j')
+            {
+                isProgrammRunning = flase;
+            }
+        }while(isProgrammRunning = false);
     }
 
-    public String encrypt(String strToEncrypt, String secret) {
-        try {
-            prepareSecreteKey(secret);
-            Cipher cipher = Cipher.getInstance(ALGORITHM);
-            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-            return Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
-        } catch (Exception e) {
-            System.out.println("Error while encrypting: " + e.toString());
-        }
-        return null;
-    }
-
-    public String decrypt(String strToDecrypt, String secret) {
-        try {
-            prepareSecreteKey(secret);
-            Cipher cipher = Cipher.getInstance(ALGORITHM);
-            cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
-        } catch (Exception e) {
-            System.out.println("Error while decrypting: " + e.toString());
-        }
-        return null;
-    }
 
     public static void main(String[] args) {
-        final String secretKey = "secrete";
-
-        String originalString = "javaguides";
-
-        Verschluesselung aesEncryptionDecryption = new Verschluesselung();
-        String encryptedString = aesEncryptionDecryption.encrypt(originalString, secretKey);
-        String decryptedString = aesEncryptionDecryption.decrypt(encryptedString, secretKey);
-
-        System.out.println(originalString);
-
-
 
         boolean isProgrammRunning = true;
+        String SatzE = " ";
+        String Puffer= " ";
+        int VerschiebungE = 0;
+        String Ausgabe = " ";
+
         while (isProgrammRunning)
         {
             System.out.println("Auswahlmenü:");
             System.out.println("1. Verschlüsseln (e)");
             System.out.println("2. Entschlüsseln (d)");
-
+            System.out.println("3. Beenden (b)");
             Scanner inputFromScanner = new Scanner(System.in);
             char selectionOfUser = inputFromScanner.next().charAt(0);
 
             switch (selectionOfUser)
             {
                 case'e':
+                    System.out.println("Um wieviel soll der Text verschoben werden?");
+                    VerschiebungE = inputFromScanner.nextInt();
                     System.out.println("Geben Sie einen Text ein:");
-                    originalString = inputFromScanner.toString();
 
                     System.out.println("Der Verschüsselte Text lautet:e");
-                    System.out.println(encryptedString);
+                    SatzE = inputFromScanner.next();
+
+                    Ausgabe = encrypt(Verschiebung, Satz);
+                    System.out.println(Ausgabe);
                     break;
                 case 'd':
-                    System.out.println(decryptedString);
+                    System.out.println("Eingabe des zu entschluesselnden Textes: ");
+                    SatzE = inputFromScanner.next();
+
+                    Ausgabe = decrypt(Satz);
+                    System.out.println(Ausgabe);
+                    break;
+                case 'b':
+                    System.out.println("Wird beendet ...");
+                    isProgrammRunning = false;
                     break;
             }
+
+
         }
     }
 }
