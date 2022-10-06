@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 public class Verschluesselung {
-    public String encrypt()
+    public static String encrypt()
     {
         int Verschiebung = 0;
         String Satz = "";
@@ -11,33 +11,34 @@ public class Verschluesselung {
 
         for(int i = 0; i < Satz.length(); i++)
         {
-            Buchstabe = Satz[i];
+            Buchstabe = Satz.charAt(i);
             Buchstabe += Verschiebung;
-            Satz[i] = Buchstabe;
+            Satz.charAt(i) = Buchstabe;
         }
         return Satz;
     }
-    public String decrypt(String Satz)
+    public static String decrypt(String Satz)
     {
-        int Buchstabe = Satz[i];
+        int Buchstabe = 0;
         boolean isProgrammRunning = true;
-        do{
+
+        while(isProgrammRunning=true){
             for(int i = 0; i<Satz.length(); i++)
             {
-                Buchstabe = Satz[i];
+                Buchstabe = Satz.charAt(i);
                 Buchstabe -= 1;
                 Satz[i]= Buchstabe;
             }
             System.out.println("Der Text lautet: ");
             System.out.println(Satz);
-            System.out.println("Wurde derText entschluesselt? Wenn ja (j)");
-            Scanner inputFromScanner = new Scanner(System.in);
-            char programmEnd = inputFromScanner.next().charAt();
-            if (programmEnd == 'j')
+            System.out.println("Wurde derText entschluesselt? Wenn ja (1)");
+            Scanner inputFromScanner2 = new Scanner(System.in);
+            int programmEnd = inputFromScanner2.nextInt();
+            if (programmEnd == 1)
             {
-                isProgrammRunning = flase;
+                isProgrammRunning = false;
             }
-        }while(isProgrammRunning = false);
+        }
     }
 
 
@@ -68,14 +69,14 @@ public class Verschluesselung {
                     System.out.println("Der Verschüsselte Text lautet:e");
                     SatzE = inputFromScanner.next();
 
-                    Ausgabe = encrypt(Verschiebung, Satz);
+                    Ausgabe = Verschluesselung.encrypt();
                     System.out.println(Ausgabe);
                     break;
                 case 'd':
                     System.out.println("Eingabe des zu entschluesselnden Textes: ");
                     SatzE = inputFromScanner.next();
 
-                    Ausgabe = decrypt(Satz);
+                    Ausgabe = Verschluesselung.decrypt();
                     System.out.println(Ausgabe);
                     break;
                 case 'b':
