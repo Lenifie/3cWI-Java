@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -11,7 +12,7 @@ public class Encryption {
         {
             letter = sentenceToEncrypt.charAt(i);
 
-            letter += letterShift;
+            letter -= letterShift;
 
             if (letter > 96 && letter>122){
                 letter = 96 + (letter - 122);
@@ -23,23 +24,32 @@ public class Encryption {
         }
         return encryptedSentence;
     }
-    public static String decrypt(int letterShift,String sentenceToDecrypt)
+    public static String decrypt(String sentenceToDecrypt)
     {
+
         int letter = 0;
         String decryptedSentence = "";
         boolean isProgrammRunning = true;
 
         while(isProgrammRunning=true){
+            int letterShift = 1;
+
             for(int i = 0; i<sentenceToDecrypt.length(); i++)
             {
                 letter = sentenceToDecrypt.charAt(i);
+                letter += letterShift;
+
+                if (letter > 96 && letter>122){
+                    letter = 96 + (letter - 122);
+                }
 
                 String letterAsString = Character.toString(letter);
                 decryptedSentence += letterAsString;
             }
+
             System.out.println("Der Text lautet: ");
             System.out.println(sentenceToDecrypt);
-            System.out.println("Wurde derText entschluesselt? Wenn ja (1) nein (2)");
+            System.out.println("Wurde der Text entschluesselt? Wenn ja (1) nein (2)");
             Scanner inputFromScanner2 = new Scanner(System.in);
             int programmEnd = inputFromScanner2.nextInt();
             if (programmEnd == 1)
@@ -49,10 +59,11 @@ public class Encryption {
             else if (programmEnd == 2)
             {
                 isProgrammRunning = true;
+                letterShift = letterShift +1;
             }
 
         }
-        return sentenceToDecrypt;
+        return decryptedSentence;
     }
 /*
     public static void run(){
@@ -104,7 +115,7 @@ public class Encryption {
         //run();
         String result = encrypt(2,"ABYZabyz");
         System.out.println(result);
-        String result2 = decrypt(2,"cdab");
+        String result2 = decrypt("cdab");
         System.out.println(result2);
     }
 
