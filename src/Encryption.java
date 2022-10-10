@@ -26,7 +26,7 @@ public class Encryption {
     public static String decrypt(int letterShift,String sentenceToDecrypt)
     {
         int letter = 0;
-        String encryptedSentence = "";
+        String decryptedSentence = "";
         boolean isProgrammRunning = true;
 
         while(isProgrammRunning=true){
@@ -35,25 +35,29 @@ public class Encryption {
                 letter = sentenceToDecrypt.charAt(i);
 
                 String letterAsString = Character.toString(letter);
-                encryptedSentence += letterAsString;
+                decryptedSentence += letterAsString;
             }
             System.out.println("Der Text lautet: ");
             System.out.println(sentenceToDecrypt);
-            System.out.println("Wurde derText entschluesselt? Wenn ja (1)");
+            System.out.println("Wurde derText entschluesselt? Wenn ja (1) nein (2)");
             Scanner inputFromScanner2 = new Scanner(System.in);
             int programmEnd = inputFromScanner2.nextInt();
             if (programmEnd == 1)
             {
                 isProgrammRunning = false;
             }
+            else if (programmEnd == 2)
+            {
+                isProgrammRunning = true;
+            }
 
         }
         return sentenceToDecrypt;
     }
-
+/*
     public static void run(){
         boolean isProgrammRunning = true;
-        String letterShiftE, sentenceToDecrypt = " ";
+        String sentenceToDecrypt = " ";
         String Puffer= " ";
         int letterShiftE = 0;
         String Ausgabe = " ";
@@ -94,14 +98,14 @@ public class Encryption {
 
 
         }
-    }
+    } */
 
     public static void main(String[] args) {
         //run();
         String result = encrypt(2,"ABYZabyz");
         System.out.println(result);
-        result = decrypt(sentenceToDecrypt);
-        System.out.println(result);
+        String result2 = decrypt(2,"cdab");
+        System.out.println(result2);
     }
 
 
