@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Würfelspiel {
+public class DiceGame {
     public static void main(String[] args) {
 
        /*Erstelle ein Würfelspiel! Du spielst gegen den Computer.
