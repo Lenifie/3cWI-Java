@@ -3,20 +3,18 @@ import java.util.Scanner;
 
 
 public class Encryption {
-    public static String encrypt(int letterShift,String sentenceToEncrypt)
-    {
+    public static String encrypt(int letterShift, String sentenceToEncrypt) {
         String encryptedSentence = "";
         int letter = 0;
 
-        for(int i = 0; i < sentenceToEncrypt.length(); i++)
-        {
+        for (int i = 0; i < sentenceToEncrypt.length(); i++) {
             letter = sentenceToEncrypt.charAt(i);
 
             letter += letterShift;
 
-            if (letter > 96 && letter>122){
+            if (letter > 96 && letter > 122) {
                 letter = 96 + (letter - 122);
-            }else if(letter > 64 && letter > 90 && letter <96){
+            } else if (letter > 64 && letter > 90 && letter < 96) {
                 letter = 64 + (letter - 90);
             }
             String letterAsString = Character.toString(letter);
@@ -24,34 +22,31 @@ public class Encryption {
         }
         return encryptedSentence;
     }
-    public static String decrypt(String sentenceToDecrypt)
-    {
+
+    public static String decrypt(String sentenceToDecrypt) {
 
         int letter = 0;
         String decryptedSentence = "";
         boolean isProgrammRunning = true;
-        int letterShift = 1;
-        while(isProgrammRunning){
+        int letterShift = -1;
+        while (isProgrammRunning) {
+            for (int i = 0; i < sentenceToDecrypt.length(); i++) {
+                letter = sentenceToDecrypt.charAt(i);
 
 
-            for(int i = 0; i<sentenceToDecrypt.length(); i++)
-            {letter = sentenceToDecrypt.charAt(i);
-                letter += letterShift;
-
-                if (letter > 96 && letter>122){
+                if (letter > 96 && letter > 122) {
                     letter = 96 + (letter - 122);
-                }else if(letter > 64 && letter > 90 && letter <96){
-                    letter = 64 + (letter - 90);
+                } else if (letter > 64 && letter < 90) {
+                    // was a Big Letter
+                    letter += letterShift;
+                    if (letter <= 64) {
+                        letter = 91 - (65 - letter);
+                    }
+
                 }
-
-
                 String letterAsString = Character.toString(letter);
                 decryptedSentence += letterAsString;
-
             }
-
-
-
 
             System.out.println("Der Text lautet: ");
             System.out.println(sentenceToDecrypt);
@@ -60,15 +55,12 @@ public class Encryption {
             System.out.println("Wurde der Text entschluesselt? Wenn ja (1) nein (2)");
             Scanner inputFromScanner2 = new Scanner(System.in);
             int programmEnd = inputFromScanner2.nextInt();
-            if (programmEnd == 1)
-            {
+            if (programmEnd == 1) {
                 isProgrammRunning = false;
-            }
-            else if (programmEnd == 2)
-            {
+            } else if (programmEnd == 2) {
                 isProgrammRunning = true;
                 decryptedSentence = "";
-                letterShift = letterShift +1;
+                letterShift = letterShift - 1;
             }
 
         }
@@ -76,17 +68,15 @@ public class Encryption {
     }
 
     /*public static void run(){
-
+        String result = encrypt(1, "ZZ");
+        System.out.println("Enc:" + result);
+        String result2 = decrypt(result);
+        System.out.println("Dec:" + result2);
     }*/
 
     public static void main(String[] args) {
-        //run();
-        String result = encrypt(2,"HALLO");
-        System.out.println(result);
-        String result2 = decrypt("JCNNQ");
-        System.out.println(result2);
 
-       /* boolean isProgrammRunning = true;
+        boolean isProgrammRunning = true;
         String sentenceToDecrypt = " ";
         String Puffer= " ";
         int letterShiftE = 0;
@@ -125,10 +115,6 @@ public class Encryption {
                     isProgrammRunning = false;
                     break;
             }
-
-
-        }*/
+        }
     }
-
-
 }
