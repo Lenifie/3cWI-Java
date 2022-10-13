@@ -12,11 +12,11 @@ public class Encryption {
         {
             letter = sentenceToEncrypt.charAt(i);
 
-            letter -= letterShift;
+            letter += letterShift;
 
             if (letter > 96 && letter>122){
                 letter = 96 + (letter - 122);
-            }else if(letter > 64 && letter > 90){
+            }else if(letter > 64 && letter > 90 && letter <96){
                 letter = 64 + (letter - 90);
             }
             String letterAsString = Character.toString(letter);
@@ -30,25 +30,33 @@ public class Encryption {
         int letter = 0;
         String decryptedSentence = "";
         boolean isProgrammRunning = true;
+        int letterShift = 1;
+        while(isProgrammRunning){
 
-        while(isProgrammRunning=true){
-            int letterShift = 1;
 
             for(int i = 0; i<sentenceToDecrypt.length(); i++)
-            {
-                letter = sentenceToDecrypt.charAt(i);
+            {letter = sentenceToDecrypt.charAt(i);
                 letter += letterShift;
 
                 if (letter > 96 && letter>122){
                     letter = 96 + (letter - 122);
+                }else if(letter > 64 && letter > 90 && letter <96){
+                    letter = 64 + (letter - 90);
                 }
+
 
                 String letterAsString = Character.toString(letter);
                 decryptedSentence += letterAsString;
+
             }
+
+
+
 
             System.out.println("Der Text lautet: ");
             System.out.println(sentenceToDecrypt);
+            System.out.println("Entschlüsselter Text: ");
+            System.out.println(decryptedSentence);
             System.out.println("Wurde der Text entschluesselt? Wenn ja (1) nein (2)");
             Scanner inputFromScanner2 = new Scanner(System.in);
             int programmEnd = inputFromScanner2.nextInt();
@@ -59,15 +67,26 @@ public class Encryption {
             else if (programmEnd == 2)
             {
                 isProgrammRunning = true;
+                decryptedSentence = "";
                 letterShift = letterShift +1;
             }
 
         }
         return decryptedSentence;
     }
-/*
-    public static void run(){
-        boolean isProgrammRunning = true;
+
+    /*public static void run(){
+
+    }*/
+
+    public static void main(String[] args) {
+        //run();
+        String result = encrypt(2,"HALLO");
+        System.out.println(result);
+        String result2 = decrypt("JCNNQ");
+        System.out.println(result2);
+
+       /* boolean isProgrammRunning = true;
         String sentenceToDecrypt = " ";
         String Puffer= " ";
         int letterShiftE = 0;
@@ -88,19 +107,19 @@ public class Encryption {
                     System.out.println("Um wieviel soll der Text verschoben werden?");
                     letterShiftE = inputFromScanner.nextInt();
                     System.out.println("Geben Sie einen Text ein:");
-                    letterShiftE, sentenceToDecrypt = inputFromScanner.next();
+                    sentenceToDecrypt = inputFromScanner.next();
                     System.out.println("Der Verschüsselte Text lautet:");
-                    Ausgabe = encrypt(letterShiftE,letterShiftE, sentenceToDecrypt);
+                    Ausgabe = encrypt(letterShiftE, sentenceToDecrypt);
                     System.out.println(Ausgabe);
                     break;
                 case 'd':
                     System.out.println("Eingabe des zu entschluesselnden Textes: ");
-                    letterShiftE, sentenceToDecrypt = inputFromScanner.next();
+                    sentenceToDecrypt = inputFromScanner.next();
 
-                    Ausgabe = decrypt(letterShiftE, sentenceToDecrypt);
+                    Ausgabe = decrypt(sentenceToDecrypt);
                     System.out.println(Ausgabe);
                     break;
-                    
+
                 case 'b':
                     System.out.println("Wird beendet ...");
                     isProgrammRunning = false;
@@ -108,15 +127,7 @@ public class Encryption {
             }
 
 
-        }
-    } */
-
-    public static void main(String[] args) {
-        //run();
-        String result = encrypt(2,"ABYZabyz");
-        System.out.println(result);
-        String result2 = decrypt("cdab");
-        System.out.println(result2);
+        }*/
     }
 
 
