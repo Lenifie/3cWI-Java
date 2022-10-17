@@ -1,7 +1,7 @@
 import at.stl.objects.Car;
 public class Main2 {
     public static void main(String[] args) {
-        int a = 7;
+       /*
         Car c1 = new Car();
         c1.brand="Audi";
         c1.fuelConsumption =7;
@@ -15,6 +15,9 @@ public class Main2 {
         c2.serialNumber = "M1234";
         c2.fuelAmount = 20;
         c2.amountOfRepetitions = 2;
+*/
+        Car c3 = new Car(17,"Opel","1234O");
+
 
         System.out.println(c1.serialNumber);
         System.out.println(c2.serialNumber);
@@ -35,5 +38,7 @@ public class Main2 {
         c2.turboBoost();
         System.out.println("---------------");
         c1.getRemainingRange();
+        System.out.println("---------------");
+        System.out.println(c3.serialNumber);
     }
 }

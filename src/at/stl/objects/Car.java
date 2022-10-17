@@ -2,13 +2,19 @@ package at.stl.objects;
 
 public class Car {
     // Instanz / Gedächtnisvariablen
+
+    //don't do that later
     public int fuelConsumption; //Verbrauch pro km
     public String brand; //Marke
     public String serialNumber; //Seriennummer
     public String color; //Autofarbe
     public int fuelAmount; //Tankstand
     public int amountOfRepetitions; //Anzahl hupen
-
+    public Car(int fuelConsumption2, String brand2,String serialNumber2){
+        this.fuelConsumption = fuelConsumption2;
+        this. brand = brand2;
+        this.serialNumber = serialNumber2;
+    }
     //Methode
     public void drive(){
         this.fuelAmount = this.fuelAmount -fuelConsumption;
@@ -32,6 +38,6 @@ public class Car {
     }
     public void getRemainingRange(){
         int remainingRange = this.fuelAmount/ this.fuelConsumption;
-        System.out.println(remainingRange);
+        System.out.println("The remaining Range is" +remainingRange + "km");
     }
 }
