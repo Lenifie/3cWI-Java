@@ -18,7 +18,7 @@ public class Main2 {
 */
         Car c3 = new Car(17,"Opel","1234O");
 
-
+/*
         System.out.println(c1.serialNumber);
         System.out.println(c2.serialNumber);
         System.out.println("---------------");
@@ -39,6 +39,8 @@ public class Main2 {
         System.out.println("---------------");
         c1.getRemainingRange();
         System.out.println("---------------");
+        */
+ */
         System.out.println(c3.serialNumber);
     }
 }
