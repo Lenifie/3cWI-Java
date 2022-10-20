@@ -15,11 +15,11 @@ public class Car {
 
     //Private dinge die nach außen nicht sichtbar sind
 
-    /*public Car(int fuelConsumption2, String brand2,String serialNumber2){
+    public Car(int fuelConsumption2, String brand2,String serialNumber2){
         this.fuelConsumption = fuelConsumption2;
         this. brand = brand2;
         this.serialNumber = serialNumber2;
-    }*/
+    }
     //Methode
     public void drive(){
         this.fuelAmount = this.fuelAmount -fuelConsumption;
