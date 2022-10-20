@@ -4,12 +4,13 @@ public class Car {
     // Instanz / Gedächtnisvariablen
 
     //don't do that later
-    public int fuelConsumption; //Verbrauch pro km
-    public String brand; //Marke
-    public String serialNumber; //Seriennummer
-    public String color; //Autofarbe
-    public int fuelAmount; //Tankstand
-    public int amountOfRepetitions; //Anzahl hupen
+    private int fuelConsumption; //Verbrauch pro km
+    private int Tank;
+    private String brand; //Marke
+    private String serialNumber; //Seriennummer
+    private String color; //Autofarbe
+    private int fuelAmount; //Tankstand
+    private int amountOfRepetitions; //Anzahl hupen
     private int amountFuelIntoMotor;
 
     //Private dinge die nach außen nicht sichtbar sind
@@ -43,5 +44,53 @@ public class Car {
     public void getRemainingRange(){
         int remainingRange = this.fuelAmount/ this.fuelConsumption;
         System.out.println("The remaining Range is" +remainingRange + "km");
+    }
+
+    public void setTank(int tank){
+        Tank = tank;
+    }
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+    public void setColor(String color){
+       this.color = color;
+    }
+    public void setFuelAmount(int fuelAmount){
+        if(fuelAmount > 100){
+            this.fuelAmount = 100;
+        }else{
+            this.fuelAmount = fuelAmount;
+        }
+
+    }
+    public void setFuelConsumption(int fuelConsumption){
+        this.fuelConsumption = fuelConsumption;
+    }
+    public void setSerialNumber(String serialNumber){
+        this.serialNumber = serialNumber;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public int getTank() {
+        return Tank;
     }
 }
