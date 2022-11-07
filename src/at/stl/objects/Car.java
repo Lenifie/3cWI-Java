@@ -1,9 +1,13 @@
 package at.stl.objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     // Instanz / Gedächtnisvariablen
     //don't do that later
     private Engine engine;
+    private List<RearMirror> mirrors;
     private String brand; //Marke
     private String color; //Autofarbe
     private int honkCounter;
@@ -15,8 +19,16 @@ public class Car {
        this.brand=brand;
        this.color=color;
        this.honkCounter =0;
+       this.mirrors = new ArrayList<>();
     }
     //Methode
+    public void  addMirror(RearMirror rearMirror){
+        this.mirrors.add(rearMirror);
+    }
+
+    public List<RearMirror> getMirrors() {
+        return mirrors;
+    }
 
     public void honk(){
         System.out.println("ich bin ein "+ this.brand +"und habe die Farbe "+ this.color + "und habe "+this.getEngine().getHorsePower() + "ps");
