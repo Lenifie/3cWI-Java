@@ -31,7 +31,7 @@ public class Car {
     public List<RearMirror> getMirrors() {
         return mirrors;
     }
-    public void addTire(Tire rearTire){this.tires.add(rearTire);}
+    public void addTire(Tire Tire){this.tires.add(Tire);}
     public List<Tire>getTires(){return tires;}
     public void honk(){
         System.out.println("ich bin ein "+ this.brand +"und habe die Farbe "+ this.color + "und habe "+this.getEngine().getHorsePower() + "ps");
