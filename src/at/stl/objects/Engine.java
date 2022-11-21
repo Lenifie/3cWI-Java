@@ -8,7 +8,7 @@ public class Engine {
     private TYPE type; //Diesel oder Benzin
     private int amount; //tank
     private int speed; //geschwindigkeit
-    private int fuelConsumption; //Verrauch pro km
+    private int fuelConsumption; //Verbrauch pro km
     public Engine(int horsePower,TYPE type, int amount, int speed, int fuelConsumption){
         this.horsePower = horsePower;
         this.type=type;

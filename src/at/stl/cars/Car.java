@@ -1,5 +1,4 @@
 package at.stl.cars;
-//package manufactur hinzufügen
 
 public class Car {
 private String color;
@@ -21,7 +20,15 @@ public Car(String color, Engine engine,float basisPrice, Manufacturer manufactur
 
     public float getBasisPrice() {return basisPrice;}
     public void setBasisPrice(float BasisPrice){this.basisPrice = basisPrice;}
-    public void Price (float BasisPrice, )
+    public void Price (float BasisPrice,float discount ){
+        float price = (BasisPrice/100) * discount;
+        System.out.println("Der Basispreis war: "+ BasisPrice + "\n" + "Der Händlerpreis beträgt: " + price);
+    }
+
+    public void drive(){
+        System.out.println("Das Auto fährt");
+        engine.drive();
+    }
 
     public Engine getEngine(){ return  engine;}
     public void  setEngine(Engine engine){this.engine = engine; }
