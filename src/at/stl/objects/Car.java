@@ -45,5 +45,11 @@ public class Car {
     public Engine getEngine(){ return  engine;}
     public void  setEngine(Engine engine){this.engine = engine; }
 
+    public void drive(){
+        System.out.println("I am driving");
+    }
 
+    public void stop(){
+        System.out.println("I am breaking ... car");
+    }
 }

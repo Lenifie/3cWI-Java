@@ -34,5 +34,7 @@ public class Main2 {
 
       Truck tr1 = new Truck(e1,"mercedes","green","trailer1");
       System.out.println(tr1.getColor() + " " + tr1.getTrailer());
+      tr1.drive();
+      tr1.stop();
    }
 }
