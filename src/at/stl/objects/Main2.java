@@ -30,7 +30,9 @@ public class Main2 {
       System.out.println(c1.getMirrors().get(0).getPosition());
       System.out.println("----------------");
       System.out.println(c1.getTires().get(0).getType());
+      System.out.println("----------------");
 
-
+      Truck tr1 = new Truck(e1,"mercedes","green","trailer1");
+      System.out.println(tr1.getColor() + " " + tr1.getTrailer());
    }
 }
