@@ -4,18 +4,15 @@ public class circle extends geometrikFigure{
 
     private double radius;
 
-    public circle(String name,double area, double radius) {
-        super(name,area);
+    public circle(String name,double radius) {
+        super(name);
         this.radius = radius;
     }
 
     //Methods
-    @Override
-
-    public void setArea(double area) {
-        area = 2 * radius * 3.14;
-        super.setArea(area);
-    }
+  public void getArea(){
+      System.out.println("Kreisfläche: " + 2*this.radius*3.14);
+  }
 
     public void setRadius(double radius) {
         this.radius = radius;

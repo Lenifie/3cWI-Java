@@ -6,17 +6,17 @@ public class geometrikFigure {
 
 
 
-    public geometrikFigure(String name, double area){
+    public geometrikFigure(String name){
         this.name = name;
-        this.area = getArea();
+
 
     }
 
     //Methods
 
-    public double getArea(){
+    public void getArea(){
         System.out.println(area);
-        return 0;
+
     }
 
     public String getName() {return name;}

@@ -3,17 +3,14 @@ package at.stl.geometrikFigure;
 public class quadrat extends geometrikFigure{
     private double length;
 
-    public quadrat(String name,double area, double length) {
-        super(name,area);
+    public quadrat(String name,double length) {
+        super(name);
         this.length = length;
     }
 
     //Methods
-
-    @Override
-    public void setArea(double area) {
-        area = length*length;
-        super.setArea(area);
+    public void getArea() {
+        System.out.println("Quadratfläche: "+this.length*this.length);
     }
 
     public void setLength(double length) {

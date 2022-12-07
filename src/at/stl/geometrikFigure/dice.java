@@ -4,18 +4,18 @@ public class dice extends geometrikFigure{
     private double length;
     private double high;
 
-    public dice(String name,double area, double length, double high) {
-        super(name,area);
+    public dice(String name,double length, double high) {
+        super(name);
         this.length = length;
         this.high = high;
     }
 
     //Methods
 
-    @Override
-    public void setArea(double area) {
-        area = 6 * (length*length);
-        super.setArea(area);
+
+    public void getArea() {
+        System.out.println("Würfelfläche: " + 6 * (this.length*this.length));
+
     }
 
     public void setLength(double length) {

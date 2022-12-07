@@ -4,17 +4,16 @@ public class rectangle extends geometrikFigure{
     private double length;
     private double width;
 
-    public rectangle(String name,double area, double length, double width) {
-        super(name,area);
+    public rectangle(String name,double length, double width) {
+        super(name);
         this.length = length;
         this.width = width;
     }
 
     //Methods
-    @Override
-    public void setArea(double area) {
-        area = length * width;
-        super.setArea(area);
+
+    public void getArea() {
+        System.out.println("Rechteckfläche: "+this.length * this.width);
     }
 
     public void setLength(double length) {
