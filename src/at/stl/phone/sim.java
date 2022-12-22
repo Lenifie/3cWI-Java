@@ -22,6 +22,6 @@ public class sim {
     }
 
     public void doCall(){
-
+        System.out.println("Klingelt ...");
     }
 }

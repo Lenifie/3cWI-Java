@@ -18,12 +18,12 @@ public class SDCard {
     //Methods
     public void saveFile(PhoneFile phoneFile){
         this.phoneFiles.add(phoneFile);
-
-
     }
 
     public void getAllFiles(PhoneFile phoneFile){
-
+        for (PhoneFile phoneFiles: this.phoneFiles){
+            System.out.println("Name.extension size "+ phoneFile.getName() + phoneFile.getExtension() + " "+ phoneFile.getSize() );
+        }
     }
 
     public void getFreeSpace(PhoneFile phoneFile){
