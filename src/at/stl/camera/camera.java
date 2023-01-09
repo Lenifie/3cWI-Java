@@ -27,7 +27,7 @@ public class camera {
     public void takePic(Picture pictures){
         this.SDCard.takePic(pictures);
         if (resolution == RESOLUTION.k) {
-            pictures.getSize() = 2;
+            pictures.setSize() == 2;
         }
     }
 }
