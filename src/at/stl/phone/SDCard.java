@@ -12,7 +12,6 @@ public class SDCard {
     public SDCard(float capacity){
         this.capacity = capacity;
         this.phoneFiles = new ArrayList<PhoneFile>();
-
     }
 
     //Methods
@@ -39,6 +38,5 @@ public class SDCard {
 
     public void getFreeSpace(PhoneFile phoneFile){
         capacity = capacity + phoneFile.getSize();
-
     }
 }
