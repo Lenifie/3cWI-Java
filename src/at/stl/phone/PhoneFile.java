@@ -22,6 +22,6 @@ public class PhoneFile {
     public float getSize() {return size;}
 
     public void getInfo(){
-        System.out.println("Name"+name+" "+ "Größe"+ size);
+        System.out.println("Name "+ name+"."+extension+" "+ "Größe "+ size );
     }
 }

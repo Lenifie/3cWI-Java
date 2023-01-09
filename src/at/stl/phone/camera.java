@@ -8,15 +8,21 @@ import java.util.List;
 public class camera {
     private String resolution;
     private List<PhoneFile> phoneFiles;
-
+    private SDCard SDCard;
 
     public camera(String resolution){
         this.resolution = resolution;
         this.phoneFiles = new ArrayList<>();
+        this.SDCard = SDCard;
     }
 
     //Methods
-    public void saveFile(PhoneFile phoneFile){
-        this.phoneFiles.add(phoneFile);
+
+    public String getResolution() {return resolution;}
+    public void setResolution(String resolution) {this.resolution = resolution;}
+
+    public void makePic(PhoneFile phoneFile){
+        this.SDCard.saveFile(phoneFile);
     }
+
 }
