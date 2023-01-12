@@ -13,21 +13,23 @@ public class camera {
     private RESOLUTION resolution;
     private SDCard SDCard;
     private List<Picture> pictures;
+    private  Lens Lens;
+    private ManufacturerCamera manufacturerCamera;
 
-    public camera(float pixel,float weight,String color,RESOLUTION resolution, SDCard SDCard){
+    public camera(float pixel,float weight,String color,RESOLUTION resolution, SDCard SDCard, Lens Lens, ManufacturerCamera manufacturerCamera){
         this.pixel = pixel;
         this.weight = weight;
         this.color = color;
         this.resolution = resolution;
         this.SDCard = SDCard;
+        this.Lens = Lens;
+        this.manufacturerCamera = manufacturerCamera;
         this.pictures = new ArrayList<Picture>();
     }
 
     //Methods
     public void takePic(Picture pictures){
         this.SDCard.takePic(pictures);
-        if (resolution == RESOLUTION.k) {
-            pictures.setSize() == 2;
-        }
+
     }
 }

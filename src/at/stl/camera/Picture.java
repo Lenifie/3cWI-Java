@@ -5,7 +5,7 @@ public class Picture {
     private String date;
     private float size;
 
-    public Picture(String name, String date, float size){
+    public Picture(String name, String date){
         this.name = name;
         this.date = date;
         this.size = size;
@@ -22,6 +22,6 @@ public class Picture {
     public float getSize() {return size;}
 
     public void getInfo(){
-        System.out.println("Name "+ name+" "+ "Größe "+ size );
+        System.out.println("Name "+ name+" "+ "Größe "+ size+ " "+"Datum "+date );
     }
 }
