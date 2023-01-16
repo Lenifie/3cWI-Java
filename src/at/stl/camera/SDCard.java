@@ -21,9 +21,6 @@ public class SDCard {
     public void setCapacity(float capacity) {this.capacity = capacity;}
     public float getCapacity() {return capacity;}
 
-    public void setFiles(List<PhoneFile> files) {this.files = files;}
-    public List<PhoneFile> getFiles() {return files;}
-
     public void setResolution(Camera.RESOLUTION resolution) {this.resolution = resolution;}
     public Camera.RESOLUTION getResolution() {return resolution;}
 
@@ -39,6 +36,10 @@ public class SDCard {
     }
 
     public List<PhoneFile> getAllFiles(){
+        for (PhoneFile p:this.files)
+        {
+            p.getInfo();
+        }
       return files;
     }
 

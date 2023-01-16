@@ -26,10 +26,26 @@ public class Camera {
     }
 
     //Methods
+    public void setPixel(float pixel) {this.pixel = pixel;}
+    public float getPixel() {return pixel;}
+
+    public void setWeight(float weight) {this.weight = weight;}
+    public float getWeight() {return weight;}
+
+    public void setColor(String color) {this.color = color;}
+    public String getColor() {return color;}
+
+    public void setResolution(RESOLUTION resolution) {this.resolution = resolution;}
+    public RESOLUTION getResolution() {return resolution;}
+
+    public void setSDCard(at.stl.camera.SDCard SDCard) {this.SDCard = SDCard;}
+    public at.stl.camera.SDCard getSDCard() {return SDCard;}
+
+
     public void takePic(){
         PhoneFile picture ;
         if (resolution == Camera.RESOLUTION.k) {
-           //  make pictue
+           //  make picture
             picture = new PhoneFile("image","jpg",2000);
         }
         else if (resolution == Camera.RESOLUTION.m){
@@ -37,10 +53,11 @@ public class Camera {
         } else  {
             picture = new PhoneFile("image","jpg",6000);
         }
-
         this.SDCard.saveFile(picture);
-
     }
 
+    public void newSDCard(){
+        SDCard = new SDCard(16000);
+    }
 
 }

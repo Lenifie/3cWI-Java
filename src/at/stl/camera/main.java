@@ -12,9 +12,17 @@ public class main {
         c1.takePic();
         c1.takePic();
         c1.takePic();
+        c1.takePic();
 
         s1.getAllFiles();
         s1.getCapacity();
+        System.out.println("----------");
 
+        c1.newSDCard();
+        c1.takePic();
+        c1.takePic();
+        c1.takePic();
+        s1.getAllFiles();
+        s1.getCapacity();
     }
 }

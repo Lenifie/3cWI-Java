@@ -11,6 +11,10 @@ public class PhoneFile {
         this.size = size;
     }
 
+    //Methods
+    public void getInfo(){
+        System.out.println("Name "+ name+"."+extension+" "+ "Größe "+ size );
+    }
     public String getName() {
         return name;
     }
