@@ -14,12 +14,29 @@ public class SDCard {
 
     }
 
-    public void saveFile(PhoneFile file){
-        this.files.add(file);
-    }
+
 
     //Methods
 
+    public void setCapacity(float capacity) {this.capacity = capacity;}
+    public float getCapacity() {return capacity;}
+
+    public void setFiles(List<PhoneFile> files) {this.files = files;}
+    public List<PhoneFile> getFiles() {return files;}
+
+    public void setResolution(Camera.RESOLUTION resolution) {this.resolution = resolution;}
+    public Camera.RESOLUTION getResolution() {return resolution;}
+
+    public void saveFile(PhoneFile file){
+        if(capacity < file.getSize()){
+            System.out.println("Bild konte nicht gespeichert werden. Speicher ist voll. SDCard wechseln!");
+        }
+        else{
+            this.files.add(file);
+            this.capacity -= file.getSize();
+            System.out.println("File gespeichert");
+        }
+    }
 
     public List<PhoneFile> getAllFiles(){
       return files;

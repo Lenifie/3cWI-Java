@@ -2,7 +2,7 @@ package at.stl.camera;
 
 public class main {
     public static void main(String[] args) {
-        SDCard s1 = new SDCard(16);
+        SDCard s1 = new SDCard(16000);
         ManufacturerCamera mc1 = new ManufacturerCamera("Canon","Austria");
         ManufacturerLens ml1 = new ManufacturerLens("Hubu", "Indonesia");
         Lens l1 = new Lens(250, ml1);
@@ -14,6 +14,7 @@ public class main {
         c1.takePic();
 
         s1.getAllFiles();
+        s1.getCapacity();
 
     }
 }
