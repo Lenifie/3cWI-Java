@@ -16,4 +16,15 @@ public class Musicbox {
         this.records.add(record);
 
     }
+
+    public void removeRecord(Record record){
+        this.records.remove(record);
+
+    }
+
+    public void getSumOfMusic(){
+        for (int i = 0; i<records.size();i++){
+            float sum += ;
+        }
+    }
 }
