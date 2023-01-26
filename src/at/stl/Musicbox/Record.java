@@ -9,7 +9,7 @@ public class Record {
     private int ID;
     private String recordTitle;
     private List<Title> titles;
-    private float SumMusic;
+    private double SumMusic;
 
 
     public Record(int ID,String recordTitle){
@@ -30,16 +30,18 @@ public class Record {
         this.titles.add(title);
     }
 
-    public void getSumOfMusic(Title title){
-        this.SumMusic += title.getLength();
+    public double getSumOfMusic(){
+        for(int i = 0; i<titles.size();i++){
+            this.SumMusic += titles.get(i).getLength();
+        }
+        return SumMusic;
     }
 
-    public Title searchRecord(List<Title>titles){
+    public void searchRecord(){
         for (Title title : this.titles){
             if(title.getTitle().equals(title)){
-                return title;
+                System.out.println("Found");;
             }
         }
-        return null;
     }
 }

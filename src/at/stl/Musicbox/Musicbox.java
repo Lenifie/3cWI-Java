@@ -7,12 +7,12 @@ import java.util.List;
 public class Musicbox {
     private List<Record> records;
     private List<Title> titles;
-    private Record Record;
+    private double SumMusic;
 
     public Musicbox(){
         this.records = new ArrayList<>();
         this.titles = new ArrayList<>();
-        this.Record = Record;
+        this.SumMusic = SumMusic;
     }
 
     //Methods
@@ -30,12 +30,19 @@ public class Musicbox {
 
     }
 
-    public void getSumOfMusic(Title title){
-        this.Record.getSumOfMusic(title);
+
+    public double getSumOfMusic(){
+        for(int i = 0; i<this.records.size();i++){
+            this.SumMusic += this.records.get(i).getSumOfMusic();
+        }
+        return SumMusic;
     }
 
-    public void searchRecord(List<Title>titles){
-        this.Record.searchRecord(titles);
+    public void searchRecord(){
+        for (int i = 0; i<this.records.size();i++) {
+            this.records.get(i).searchRecord();
+        }
+
     }
 
 }

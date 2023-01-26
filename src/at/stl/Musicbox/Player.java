@@ -6,21 +6,24 @@ import java.util.List;
 public class Player {
     private List<Record> records;
     private List<Title> titles;
-    int num;
+    int numTitle;
+    int numRecord;
 
-    public Player(){
-        this.num = num;
+    public Player(int numRecord,int numTitle){
+        this.numRecord = numRecord;
+        this.numTitle = numTitle;
         this.records = new ArrayList<>();
         this.titles = new ArrayList<>();
     }
 
     //Methods
     public void loadRecord(Record record){
-
+        Title element = titles.get(numRecord);
+        System.out.println(record.getRecordTitle());
     }
 
     public void play(Record record){
-        Title element = titles.get(num);
-        record.getRecordTitle();
+        Title element = titles.get(numTitle);
+        System.out.println(record.getRecordTitle());
     }
 }
