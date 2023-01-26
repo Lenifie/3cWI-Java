@@ -6,15 +6,23 @@ import java.util.List;
 
 public class Musicbox {
     private List<Record> records;
+    private List<Title> titles;
+    private Record Record;
 
     public Musicbox(){
         this.records = new ArrayList<>();
+        this.titles = new ArrayList<>();
+        this.Record = Record;
     }
 
     //Methods
     public void addRecord(Record record){
-        this.records.add(record);
-
+        if(this.records.size() == 50){
+            System.out.println("Musicbox ist voll! Bitte zuerst eine Platte entfernen");
+        }
+        else {
+            this.records.add(record);
+        }
     }
 
     public void removeRecord(Record record){
@@ -22,9 +30,12 @@ public class Musicbox {
 
     }
 
-    public void getSumOfMusic(){
-        for (int i = 0; i<records.size();i++){
-            float sum += ;
-        }
+    public void getSumOfMusic(Title title){
+        this.Record.getSumOfMusic(title);
     }
+
+    public void searchRecord(List<Title>titles){
+        this.Record.searchRecord(titles);
+    }
+
 }
