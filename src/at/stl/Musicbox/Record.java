@@ -9,14 +9,13 @@ public class Record {
     private int ID;
     private String recordTitle;
     private List<Title> titles;
-    private double SumMusic;
+
 
 
     public Record(int ID,String recordTitle){
         this.ID = ID;
         this.recordTitle = recordTitle;
         this.titles = new ArrayList<>();
-        this.SumMusic = SumMusic;
     }
 
     //Methods
@@ -31,16 +30,18 @@ public class Record {
     }
 
     public double getSumOfMusic(){
-        for(int i = 0; i<titles.size();i++){
-            this.SumMusic += titles.get(i).getLength();
+        double sumOfMusic = 0;
+        for(int i = 0; i < this.titles.size();i++){
+            sumOfMusic += this.titles.get(i).getLength();
         }
-        return SumMusic;
+        System.out.println("Sum of Records: " + sumOfMusic);
+        return sumOfMusic;
     }
 
-    public void searchRecord(){
-        for (Title title : this.titles){
-            if(title.getTitle().equals(title)){
-                System.out.println("Found");;
+    public void searchRecord(Title title){
+        for (Title title2 : this.titles){
+            if(title2 == title) {
+                System.out.println("Found");
             }
         }
     }

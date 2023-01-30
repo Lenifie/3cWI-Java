@@ -9,7 +9,7 @@ public class Player {
     int numTitle;
     int numRecord;
 
-    public Player(int numRecord,int numTitle){
+    public Player(){
         this.numRecord = numRecord;
         this.numTitle = numTitle;
         this.records = new ArrayList<>();
@@ -18,7 +18,7 @@ public class Player {
 
     //Methods
     public void loadRecord(Record record){
-        Title element = titles.get(numRecord);
+
         System.out.println(record.getRecordTitle());
     }
 
