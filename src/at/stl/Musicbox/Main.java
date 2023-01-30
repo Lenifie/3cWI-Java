@@ -26,6 +26,8 @@ public class Main {
       m1.searchRecord(t4);
 
       Player p1 = new Player();
+      p1.loadRecord(r2);
+      p1.play();
 
 
     }

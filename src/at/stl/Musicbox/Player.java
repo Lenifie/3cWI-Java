@@ -9,6 +9,7 @@ public class Player {
     int numTitle;
     int numRecord;
 
+
     public Player(){
         this.numRecord = numRecord;
         this.numTitle = numTitle;
@@ -18,12 +19,13 @@ public class Player {
 
     //Methods
     public void loadRecord(Record record){
-
-        System.out.println(record.getRecordTitle());
+        Record currentRecord;
+        currentRecord = record;
+        System.out.println(currentRecord.getRecordTitle());
     }
 
-    public void play(Record record){
-        Title element = titles.get(numTitle);
-        System.out.println(record.getRecordTitle());
+
+    public void play(){
+        System.out.println("No Record");
     }
 }
