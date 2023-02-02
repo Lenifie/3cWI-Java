@@ -17,17 +17,17 @@ public class Main {
       r2.addTitle(t3);
       r2.addTitle(t4);
       r2.getSumOfMusic();
-
+      System.out.println("----------");
       Musicbox m1 = new Musicbox();
       m1.addRecord(r1);
       m1.removeRecord(r1);
       m1.addRecord(r2);
       m1.getSumOfMusic();
       m1.searchRecord(t4);
-
+      System.out.println("----------");
       Player p1 = new Player();
       p1.loadRecord(r2);
-      p1.play();
+      p1.play(0);
 
 
     }

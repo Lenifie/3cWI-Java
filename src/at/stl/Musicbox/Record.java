@@ -45,4 +45,8 @@ public class Record {
             }
         }
     }
+
+    public List<Title> getTitles() {
+        return titles;
+    }
 }

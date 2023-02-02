@@ -35,6 +35,7 @@ public class Musicbox {
             SumMusic = this.records.get(i).getSumOfMusic();
         }
         System.out.println("Sum of all Records " + SumMusic);
+
     }
 
     public void searchRecord(Title titles){
