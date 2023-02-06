@@ -7,7 +7,7 @@ public class Tickets {
     private  Date paidDate;
 
 
-    public Tickets(){
+    public Tickets(int ID){
         this.ID = ID;
         this.editingDate = editingDate;
         this.paidDate = paidDate;
@@ -23,6 +23,9 @@ public class Tickets {
     public Date getPaidDate() {return paidDate;}
     public void setPaidDate(Date paidDate) {this.paidDate = paidDate;}
 
+    public void getTicket(){
+        System.out.println("ID: "+ ID + " Startdatum: "+ editingDate + " Enddatum: "+ paidDate);
+    }
 
 
 }

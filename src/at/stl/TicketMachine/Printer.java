@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Printer {
-    private List<Tickets> tickets;
+    private Tickets ticket;
 
 
     public Printer(){
-        this.tickets = new ArrayList<>();
+        this.ticket = ticket;
+    }
+
+    //Methods
+    public void getTicket(){
+        for (int i = 0; i < 1; i++){
+            ticket.getTicket();
+        }
     }
 }
